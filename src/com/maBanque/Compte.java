@@ -3,7 +3,7 @@ package com.maBanque;
 public interface Compte {
 
 	/** 
-	*	Credite le compte du montant donné en argument. 
+	*	Credite le compte du montant donnï¿½ en argument. 
 	*	@param credit 
 	*	@throws Exception si credit <= 0 
 	 	 */ 
@@ -12,10 +12,10 @@ public interface Compte {
 	 	float getSolde(); 
 	 
 	 	/** 
-	*	Débite le compte de la valeur donnée en argument 
+	*	Dï¿½bite le compte de la valeur donnï¿½e en argument 
 	*	@param debit 
-	*	@return le montant demandé si le solde du compte est supérieur au montant demandé, 
-	*	retourne la valeur du solde si le solde est inférieur au montant demandé.  
+	*	@return le montant demandï¿½ si le solde du compte est supï¿½rieur au montant demandï¿½, 
+	*	retourne la valeur du solde si le solde est infï¿½rieur au montant demandï¿½.  
 	*	@throws Exception si debit < 20 ou si debit > 1000 euros. 
 	 	 */ 
 	 	float debiter(float debit) throws Exception; 
