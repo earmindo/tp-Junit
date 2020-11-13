@@ -22,13 +22,17 @@ public class CompteImpl implements Compte{
 	@Override
 	public float debiter(float debit) throws NumberNullException {
 		
-		if(debit > this.solde)
+		if(debit < 20 || debit > 1000) {
 			throw new NumberNullException();
+		}
+			
+		else if(debit > this.solde)
+			return this.solde;
 			
 		else 
-			this.solde -= debit;
+			return debit;
 		
-		return this.solde;
+		
 	}
 
 	@Override
