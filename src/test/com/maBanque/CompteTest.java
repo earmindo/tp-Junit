@@ -2,13 +2,15 @@ package test.com.maBanque;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;  
 import com.maBanque.CompteImpl;
 import com.maBanque.NumberNullException; 
  
 public class CompteTest { 
  	 
-	@Test 
+	@Test
  	public void setSolde(){ 
  	 	try{ 
  	 	 	CompteImpl compteImpl = new CompteImpl();  		 	 	
@@ -41,7 +43,7 @@ public class CompteTest {
  	 	try{ 
  	 	 	CompteImpl compteImpl = new CompteImpl();  	
  	 	 	compteImpl.setSolde(10); 
- 	 	 	compteImpl.debiter(5);  	 	 	
+ 	 	 	compteImpl.debiter(21);  	 	 	
  	 	 	float solde = compteImpl.getSolde(); 
  	 	 	
  	 	 	assertTrue(solde >= 0);  
@@ -49,6 +51,8 @@ public class CompteTest {
  	 	 	fail(e.getMessage()); 
  	 	} 
  	}
+	
+
 	
 	@Test(expected = NumberNullException.class)
 	public void setSoldeErreur() throws NumberNullException{
@@ -70,7 +74,7 @@ public class CompteTest {
 	 	 	compteImpl.setSolde(0); 
 	 	 	compteImpl.crediter(-3);	 	 	
 	}
-	
+
 
 
 } 
