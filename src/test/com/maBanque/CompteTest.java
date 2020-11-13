@@ -3,7 +3,8 @@ package test.com.maBanque;
 import static org.junit.Assert.*;
 
 import org.junit.Test;  
-import com.maBanque.CompteImpl; 
+import com.maBanque.CompteImpl;
+import com.maBanque.NumberNullException; 
  
 public class CompteTest { 
  	 
@@ -13,7 +14,7 @@ public class CompteTest {
  	 	 	CompteImpl compteImpl = new CompteImpl();  		 	 	
  	 	 	compteImpl.setSolde(0);  	 	 	
  	 	 	float solde = compteImpl.getSolde();  	 	
- 	 	 	assertTrue(solde == 0);  
+ 	 	 	assertTrue(solde >= 0);  
  	 	 } catch(Exception e){ 
  	 	 	fail(e.getMessage()); 
  	 	} 
@@ -48,6 +49,27 @@ public class CompteTest {
  	 	 	fail(e.getMessage()); 
  	 	} 
  	}
+	
+	@Test(expected = NumberNullException.class)
+	public void setSoldeErreur() throws NumberNullException{
+	 	 	CompteImpl compteImpl = new CompteImpl();  	
+	 	 	compteImpl.setSolde(-1); 	 	 	
+	}
+	
+	
+	@Test(expected = NumberNullException.class)
+	public void debiterErreur() throws NumberNullException{
+	 	 	CompteImpl compteImpl = new CompteImpl();  	
+	 	 	compteImpl.setSolde(0); 
+	 	 	compteImpl.debiter(5);  	 	 	
+	}
+	
+	@Test(expected = NumberNullException.class)
+	public void crediterErreur() throws NumberNullException{
+	 	 	CompteImpl compteImpl = new CompteImpl();  	
+	 	 	compteImpl.setSolde(0); 
+	 	 	compteImpl.crediter(-3);	 	 	
+	}
 	
 
 
